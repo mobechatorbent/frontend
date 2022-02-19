@@ -30,8 +30,8 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center"><img onclick="selectImg('mozart')" class="rounded-circle" src="https://filedn.com/lD0hmrPhttvLA7JJzg2wggX/mozart.jpg" width="300" height="300" style="padding: 10px;"></div>
-                <div class="col-md-6 text-center"><img onclick="selectImg('beethoven')" class="rounded-circle" src="https://filedn.com/lD0hmrPhttvLA7JJzg2wggX/beethoven.jpg" width="300" height="300" style="padding: 10px;"></div>
+                <div class="col-md-6 text-center"><img onclick="selectImg('mozart')" class="rounded-circle" src="{{ url_for('static', filename='images/mozart.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
+                <div class="col-md-6 text-center"><img onclick="selectImg('beethoven')" class="rounded-circle" src="{{ url_for('static', filename='images/beethoven.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
             </div>
         </div>
         {% if cname == 'mozart' %}
