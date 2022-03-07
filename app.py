@@ -11,21 +11,21 @@ def index():
 
 @app.route('/mozart')
 def mozart():
-    with open('Mozart.pkl', 'rb') as f:
+    with open('mozart.pkl', 'rb') as f:
         generator = pickle.load(f)
     filename = generate(generator)
     return render_template("index.html", cname='mozart', filename=filename)
 
 @app.route('/beethoven')
 def beethoven():
-    with open('Beethoven.pkl', 'rb') as f:
+    with open('beethoven.pkl', 'rb') as f:
         generator = pickle.load(f)
     filename = generate(generator)
     return render_template("index.html", cname='beethoven', filename=filename)
 
 @app.route('/others')
 def others():
-    with open('Classical_Era_further_epoch_10000.pkl', 'rb') as f:
+    with open('others.pkl', 'rb') as f:
         generator = pickle.load(f)
     filename = generate(generator)
     return render_template("index.html", cname='others', filename=filename)
