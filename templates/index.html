@@ -13,12 +13,12 @@
 
 <body id="page-top" data-bs-target="#mainNav" data-bs-offset="72" style="background: var(--bs-body-bg);">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top">모베차토르벤트</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="container"><a class="navbar-brand" href="/">모베차토르벤트</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"></li>
                     <li class="nav-item mx-0 mx-lg-1"></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">about</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Aiffel SESSAC</a></li>
                 </ul>
             </div>
         </div>
@@ -30,22 +30,16 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center"><img onclick="selectImg('mozart')" class="rounded-circle" src="{{ url_for('static', filename='images/mozart.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
-                <div class="col-md-6 text-center"><img onclick="selectImg('beethoven')" class="rounded-circle" src="{{ url_for('static', filename='images/beethoven.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
+                <div class="col-md-4 text-center"><img onclick="selectImg('mozart')" class="rounded-circle" src="{{ url_for('static', filename='images/mozart2.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
+                <div class="col-md-4 text-center"><img onclick="selectImg('beethoven')" class="rounded-circle" src="{{ url_for('static', filename='images/beethoven2.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
+                <div class="col-md-4 text-center"><img onclick="selectImg('others')" class="rounded-circle" src="{{ url_for('static', filename='images/others.jpg')}}" width="300" height="300" style="padding: 10px;"></div>
             </div>
         </div>
-        {% if cname == 'mozart' %}
+        {% if cname in ['mozart', 'beethoven', 'others'] %}
         <div class="container text-center" style="margin-top: 20px;">
-            <midi-player src="{{ url_for('static', filename='mozart.mid')}}" sound-font visualizer="#mozartVisualizer">
+            <midi-player src="{{ url_for('static', filename=filename)}}" sound-font visualizer="#visualizer">
             </midi-player>
-            <midi-visualizer type="waterfall" id="mozartVisualizer"></midi-visualizer>
-        </div>
-        {% endif %}
-        {% if cname == 'beethoven' %}
-        <div class="container text-center" style="margin-top: 20px;">
-            <midi-player src="{{ url_for('static', filename='beethoven.mid')}}" sound-font visualizer="#beethovenVisualizer">
-            </midi-player>
-            <midi-visualizer type="waterfall" id="beethovenVisualizer"></midi-visualizer>
+            <midi-visualizer type="waterfall" id="visualizer"></midi-visualizer>
         </div>
         {% endif %}
     </section>
